@@ -20,11 +20,14 @@ yarn watch
 ```
 
 ## Initial Migration
-```docker exec -it <service id> bash
+```sh
+docker exec -it <service id> bash
 
 yarn db:migrate
 
 ```
+
+hint: use `docker ps` to get a list of the running processes
 
 ## Deploy
 
