@@ -19,6 +19,13 @@ yarn
 yarn watch
 ```
 
+## Initial Migration
+```docker exec -it <service id> bash
+
+yarn db:migrate
+
+```
+
 ## Deploy
 
 Check out my video series for a step-by-step tutorial on how to deploy this.
