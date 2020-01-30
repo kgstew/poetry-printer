@@ -1,4 +1,4 @@
 #!/bin/sh
-cd /opt/microservices-demo/users-service
+cd /opt/poetry-printer/users-service
 mv .production.env .env
 yarn

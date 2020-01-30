@@ -1,3 +1,3 @@
 resource "aws_s3_bucket" "deploy-bucket" {
-  bucket = "microservices-demo-${var.app-name}-deployment"
+  bucket = "poetry-printer-${var.app-name}-deployment"
 }

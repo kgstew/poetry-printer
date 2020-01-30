@@ -10,7 +10,7 @@ module "listings-service" {
   key-pair             = aws_key_pair.poetry-printer-key.key_name
   name                 = "listings-service"
   private-ip           = "10.0.1.5"
-  subnet-id            = aws_subnet.microservices-demo-subnet-private-1.id
+  subnet-id            = aws_subnet.poetry-printer-subnet-private-1.id
   vpc-security-group-ids = [
     aws_security_group.allow-internal-http.id,
     aws_security_group.allow-ssh.id,

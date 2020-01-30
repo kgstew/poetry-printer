@@ -1,3 +1,3 @@
 #!/bin/sh
-cd /opt/microservices-demo/listings-service
+cd /opt/poetry-printer/listings-service
 yarn db:migrate

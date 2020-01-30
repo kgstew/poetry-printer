@@ -9,7 +9,7 @@ module "api-gateway" {
   iam-instance-profile = module.api-gateway-codedeploy.iam-instance-profile
   key-pair             = aws_key_pair.poetry-printer-key.key_name
   name                 = "api-gateway"
-  subnet-id            = aws_subnet.microservices-demo-subnet-public.id
+  subnet-id            = aws_subnet.poetry-printer-subnet-public.id
   vpc-security-group-ids = [
     aws_security_group.allow-http.id,
     aws_security_group.allow-ssh.id,

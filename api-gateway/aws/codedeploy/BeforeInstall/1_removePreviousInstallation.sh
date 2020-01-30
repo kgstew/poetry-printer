@@ -1,8 +1,8 @@
 #!/bin/sh
 
-deployment_dir=/opt/microservices-demo/api-gateway
+deployment_dir=/opt/poetry-printer/api-gateway
 if [ -d "$deployment_dir" ] && [ -x "$deployment_dir" ]; then
-  cd /opt/microservices-demo/api-gateway
+  cd /opt/poetry-printer/api-gateway
 
   rm -rf *
 fi

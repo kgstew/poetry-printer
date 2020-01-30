@@ -1,8 +1,8 @@
 #!/bin/sh
 
-deployment_dir=/opt/microservices-demo/users-service
+deployment_dir=/opt/poetry-printer/users-service
 if [ -d "$deployment_dir" ] && [ -x "$deployment_dir" ]; then
-  cd /opt/microservices-demo/users-service
+  cd /opt/poetry-printer/users-service
 
   rm -rf *
 fi
