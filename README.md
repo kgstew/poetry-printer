@@ -14,8 +14,11 @@ Uses the following technologies:
 # in main directory
 docker-compose up
 
-# in a separate terminal, inside classifieds-app
+# in a separate terminal, inside each app file 
 yarn
+
+# inside the classifieds-app folder
+
 yarn watch
 ```
 
