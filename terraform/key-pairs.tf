@@ -1,4 +1,4 @@
-resource "aws_key_pair" "microservices-demo-key" {
-  key_name   = "microservices-demo-key"
-  public_key = file("./microservices_demo.pem")
+resource "aws_key_pair" "poetry-printer-key" {
+  key_name   = "poetry-printer-key"
+  public_key = file("./poetry_printer.pem")
 }

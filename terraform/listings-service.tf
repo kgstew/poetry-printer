@@ -5,9 +5,9 @@ resource "aws_eip" "listings-service-eip" {
 module "listings-service" {
   source = "./node-server"
 
-  ami-id               = "ami-0119aa4d67e59007c"
+  ami-id               = "ami-062f7200baf2fa504"
   iam-instance-profile = module.listings-service-codedeploy.iam-instance-profile
-  key-pair             = aws_key_pair.microservices-demo-key.key_name
+  key-pair             = aws_key_pair.poetry-printer-key.key_name
   name                 = "listings-service"
   private-ip           = "10.0.1.5"
   subnet-id            = aws_subnet.microservices-demo-subnet-private-1.id

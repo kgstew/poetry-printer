@@ -5,9 +5,9 @@ resource "aws_eip" "api-gateway-eip" {
 module "api-gateway" {
   source = "./node-server"
 
-  ami-id               = "ami-0119aa4d67e59007c"
+  ami-id               = "ami-062f7200baf2fa504"
   iam-instance-profile = module.api-gateway-codedeploy.iam-instance-profile
-  key-pair             = aws_key_pair.microservices-demo-key.key_name
+  key-pair             = aws_key_pair.poetry-printer-key.key_name
   name                 = "api-gateway"
   subnet-id            = aws_subnet.microservices-demo-subnet-public.id
   vpc-security-group-ids = [
