@@ -100,32 +100,32 @@ resource "aws_security_group" "allow-all-outbound" {
 }
 
 resource "aws_subnet" "poetry-printer-subnet-public" {
-  availability_zone_id = "apse2-az1"
+  availability_zone_id = "use1-az1"
   cidr_block           = "10.0.0.0/24"
   vpc_id               = aws_vpc.poetry-printer.id
 
   tags = {
-    Name = "Microservices Demo Subnet (Public)"
+    Name = "Poetry Printer Subnet (Public)"
   }
 }
 
 resource "aws_subnet" "poetry-printer-subnet-private-1" {
-  availability_zone_id = "apse2-az1"
+  availability_zone_id = "use1-az1"
   cidr_block           = "10.0.1.0/24"
   vpc_id               = aws_vpc.poetry-printer.id
 
   tags = {
-    Name = "Microservices Demo Subnet (Private 1)"
+    Name = "Poetry Printer Subnet (Private 1)"
   }
 }
 
 resource "aws_subnet" "poetry-printer-subnet-private-2" {
-  availability_zone_id = "apse2-az2"
+  availability_zone_id = "use1-az2"
   cidr_block           = "10.0.2.0/24"
   vpc_id               = aws_vpc.poetry-printer.id
 
   tags = {
-    Name = "Microservices Demo Subnet (Private 2)"
+    Name = "Poetry Printer Subnet (Private 2)"
   }
 }
 
@@ -134,6 +134,6 @@ resource "aws_vpc" "poetry-printer" {
   enable_dns_hostnames = true
 
   tags = {
-    Name = "Microservices Demo VPC"
+    Name = "Poetry Printer VPC"
   }
 }

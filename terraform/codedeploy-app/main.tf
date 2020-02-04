@@ -41,3 +41,17 @@ resource "aws_codedeploy_deployment_group" "dev" {
     }
   }
 }
+
+resource "aws_codedeploy_deployment_group" "prod" {
+  app_name              = aws_codedeploy_app.default.name
+  deployment_group_name = "prod"
+  service_role_arn      = aws_iam_role.codedeploy-role.arn
+
+  ec2_tag_set {
+    ec2_tag_filter {
+      key   = "Name"
+      type  = "KEY_AND_VALUE"
+      value = var.ec2-instance-name
+    }
+  }
+}
