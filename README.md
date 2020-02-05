@@ -34,4 +34,18 @@ hint: use `docker ps` to get a list of the running processes
 
 ## Deploy
 
-Check out my video series for a step-by-step tutorial on how to deploy this.
+Uses `terraform` for infrastructure deployment
+```
+terraform init
+terraform apply
+```
+
+Uses `node-deploy` for api-gateway, listings-service and users-service deployment
+```
+npm deploy
+```
+
+Uses `aw2 cli` for classified-app s3 bucket deployment
+```
+npm deploy
+```
