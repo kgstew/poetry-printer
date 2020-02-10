@@ -1,37 +1,47 @@
-import { gql } from "apollo-server";
+import { gql } from 'apollo-server';
 
 const typeDefs = gql`
-  scalar Date
+    scalar Date
 
-  type Listing {
-    description: String!
-    id: ID!
-    title: String!
-  }
+    type Listing {
+        description: String!
+        id: ID!
+        title: String!
+    }
 
-  type User {
-    email: String!
-    id: ID!
-  }
+    type User {
+        email: String!
+        id: ID!
+    }
 
-  type UserSession {
-    createdAt: Date!
-    expiresAt: Date!
-    id: ID!
-    user: User!
-  }
+    type UserSession {
+        createdAt: Date!
+        expiresAt: Date!
+        id: ID!
+        user: User!
+    }
 
-  type Mutation {
-    createListing(description: String!, title: String!): Listing!
-    createUser(email: String!, password: String!): User!
-    createUserSession(email: String!, password: String!): UserSession!
-    deleteUserSession(sessionId: ID!): Boolean!
-  }
+    type Mutation {
+        createListing(description: String!, title: String!): Listing!
+        createPoem(author: String!, body: String!, title: String!, userId: ID!): Poem!
+        createUser(email: String!, password: String!): User!
+        createUserSession(email: String!, password: String!): UserSession!
+        deleteUserSession(sessionId: ID!): Boolean!
+    }
 
-  type Query {
-    listings: [Listing!]!
-    userSession(me: Boolean!): UserSession
-  }
+    type Poem {
+        author: String!
+        body: String!
+        id: ID!
+        title: String!
+        userId: ID!
+    }
+
+    type Query {
+        listings: [Listing!]!
+        poems: [Poem!]!
+        userSession(me: Boolean!): UserSession
+    }
 `;
 
 export default typeDefs;
