@@ -23,7 +23,7 @@ const typeDefs = gql`
 
     type Mutation {
         createListing(description: String!, title: String!): Listing!
-        createPoem(author: String!, body: String!, title: String!, userId: ID!): Poem!
+        createPoem(author: String!, body: String!, title: String!): Poem!
         createUser(email: String!, password: String!): User!
         createUserSession(email: String!, password: String!): UserSession!
         deleteUserSession(sessionId: ID!): Boolean!

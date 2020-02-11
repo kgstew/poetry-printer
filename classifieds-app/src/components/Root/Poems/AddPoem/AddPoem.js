@@ -9,8 +9,8 @@ import Textarea from '#root/components/shared/Textarea';
 import TextInput from '#root/components/shared/TextInput';
 
 const mutation = gql`
-    mutation($author: String!, $body: String!, $title: String!, $userId: ID!) {
-        createPoem(author: $author, body: $body, title: $title, userId: $userId) {
+    mutation($author: String!, $body: String!, $title: String!) {
+        createPoem(author: $author, body: $body, title: $title) {
             id
         }
     }
@@ -52,8 +52,8 @@ const AddPoem = ({ onAddPoem: pushAddPoem }) => {
 
     if (!session) return <p>Login to add poems.</p>;
 
-    const onSubmit = handleSubmit(async ({ author, body, title, userId }) => {
-        await createPoem({ variables: { author, body, title, userId } });
+    const onSubmit = handleSubmit(async ({ author, body, title }) => {
+        await createPoem({ variables: { author, body, title } });
         reset();
         pushAddPoem();
     });
@@ -70,7 +70,7 @@ const AddPoem = ({ onAddPoem: pushAddPoem }) => {
             </Label>
             <Label>
                 <LabelText>Body</LabelText>
-                <Textarea disabled={isSubmitting} name="description" ref={register} />
+                <Textarea disabled={isSubmitting} name="body" ref={register} />
             </Label>
             <Button disabled={isSubmitting} type="submit">
                 Add Poem
